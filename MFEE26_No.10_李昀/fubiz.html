@@ -1,0 +1,1034 @@
+<!-- 
+    尚未完成的效果：
+    1.在nav bar hover的時候
+    會跳出視窗並且切換
+    應該用 position absolute可以做到...但好累喔
+
+    2.自動切換每個卡片的標籤顏色
+    感覺用js會比較好處理 要一個一個下會瘋掉
+
+    3.中間折疊的頁面展開
+    雖然有找到boostrap的用法
+    但是因為我後來選擇手刻 
+    且js能力還不夠 所以可能之後才能夠做
+
+    4.卡片滑動、切換效果 同樣也是需要js...
+    
+
+    這份作業最為苦惱的兩個點：
+
+    img inline元素 所以下方會有小小的空隙 可以轉為block就會消失
+    
+    background image 並不能透過 transition 讓他慢慢變化
+    （不支援動畫的樣子）
+    所以我在a 之前 加了一個span
+    透過position absolute 讓 span在a後方
+    給span加上背景    
+    透過調整span的opacity 達到切換背景的效果 
+
+    
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./reset.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="./fubiz_css.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<!-- nav -->
+<nav class="bg-black">
+    
+      <div class="row ">
+        
+        <div class="small-logo">
+            <!-- 左邊小 logo -->
+            <a href="" >
+            </a>
+        </div>
+        <!-- 中間清單 -->
+        <ul class="col main-nav f-grow d-flex jc-even  " >
+            <li><span></span><a href="#">NEWS</a></li>
+            <li><span></span><a href="#">TV</a></li>
+            <li><span></span><a href="#">TALKS</a></li>
+            <li><span></span><a href="#">PRINT</a></li>
+            <li><span></span><a href="#">AGENCY</a></li>
+        </ul>
+          <!-- 右邊按鈕 -->
+        <div class=" nav-social ">
+          
+          <a href="#">
+            <span class="fb"></span>
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="#">
+              <span class="tt"></span>
+              <i class="fa-brands fa-twitter"> </i>  
+          </a>
+          
+        </div>
+        <div class="col mobile">
+          <div class="hamburger">
+            <span class="burger"></span>
+            <span class="burger"></span>
+            <span class="burger"></span>
+          </div>
+        </div>
+      </div>
+    
+</nav>
+<!-- page1 -->
+<section class="page1-1" >
+    <div class="container d-flex f-direction-col jc-c ">
+        <div class="row">
+        <!-- logo -->
+            <a href="#" class="logo" ></a>
+        </div>    
+        <div class="row d-flex">
+            
+                <ul class="nav d-flex jc-even ">
+                <li><a href="">PHTOGRAOHY</a></li>
+                <li><a href="">DESIGN</a></li>
+                <li><a href="">POP CULTURE</a></li>
+                <li><a href="">VIDEO</a></li>
+                <li><a href="">TECHNOLOGY</a></li>
+                <li><a href="">GRAPHIC</a></li>
+                <li><a href="">STORIES</a></li>
+                <li><a href="">MORE</a></li>
+                </ul>
+
+                <div class="btn ">
+                    <button> FR</button>
+                    <button> <i class="fa-solid fa-magnifying-glass"></i> </button>
+                    <button> <i class="fa-solid fa-user"></i> </button>
+                </div>
+             
+        </div>
+    </div>
+    <div class="container d-flex f-direction-col jc-c" >
+        <div class="row title  d-flex f-direction-col ai-c ">
+            <a href="#" class="por underline">Nature</a>
+            <a href="#" class="margin-bottom">
+                Sebastião Salgado : an Exhibition about the Fragility of Water
+            </a>
+        </div>
+        <div class="nav-highlight">
+            <div class=" change-page">
+                <button><i class="fa-solid fa-angle-left"></i></button><button><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+           
+            <a href="#">The Highlights</a>
+        </div>
+
+        
+    </div>
+</section>
+<section class="por"> 
+    <!-- card1 -->
+    <div class="container page1-2 por ">
+        <div class="row por margin-bottom">
+        <div class="col">
+            <div class="card card1">
+                <div class="card-top">
+                    <img src="./FubizMedia/GD-344x222.jpg" alt="">
+                </div>
+                <div class="card-bottom">
+                    <article class="">
+                        <div class="category ">
+                            <p>DESIGN</p>
+                        </div>
+                        <div class="title">
+                            <p>
+                                Beautiful Jewels Inspired by the Ocean
+                            </p>
+                        </div>
+                    </article>
+                    <div class="post-share">
+                        <span class="post-time hours">6</span>
+                        <span class="separater">·</span>
+                        <span class="share">0</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card card1">
+                <div class="card-top">
+                    <img src="./FubizMedia/L1-344x222.jpg" alt="">
+                </div>
+                <div class="card-bottom">
+                    <article class="">
+                        <div class="category color-green">
+                            <p>GRAPHIC</p>
+                        </div>
+                        <div class="title">
+                            <p>
+                                Fascinating Labyrinth Illustrations by Lhunatica
+                            </p>
+                        </div>
+                    </article>
+                    <div class="post-share">
+                        <span class="post-time hours">6</span>
+                        <span class="separater">·</span>
+                        <span class="share">0</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card card1">
+                <div class="card-top">
+                    <img src="./FubizMedia/D1-344x222.png" alt="">
+                </div>
+                <div class="card-bottom">
+                    <article class="">
+                        <div class="category ">
+                            <p>PHOTOGRAPHY</p>
+                        </div>
+                        <div class="title">
+                            <p>
+                                Fascinating Labyrinth Illustrations by Lhunatica
+                            </p>
+                        </div>
+                    </article>
+                    <div class="post-share">
+                        <span class="post-time hours">6</span>
+                        <span class="separater">·</span>
+                        <span class="share">0</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card card1">
+                <div class="card-top">
+                    <img src="./FubizMedia/AK1-344x222.jpg" alt="">
+                </div>
+                <div class="card-bottom">
+                    <article class="">
+                        <div class="category">
+                            <p>POP CULTURE</p>
+                        </div>
+                        <div class="title ">
+                            <p>
+                                Fascinating Labyrinth Illustrations by Lhunatica
+                            </p>
+                        </div>
+                    </article>
+                    <div class="post-share">
+                        <span class="post-time hours">6</span>
+                        <span class="separater">·</span>
+                        <span class="share">0</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="container page1-3 ">
+        <div class="row jc-c">
+            <ul>
+                <li><span class="bullet"></span></li>
+                <li><span class="bullet"></span></li>
+                <li><span class="bullet"></span></li>
+            </ul>    
+        </div>
+    </div>
+</section>
+<section>
+    
+</section>
+  <!-- page2 -->
+  <section class="page2-1">
+      <div class="container ">
+         
+            <div class="row ai-c">
+                <div class="col"><img src="./FubizMedia/icon-news.png" alt="">
+                </div>
+                <div class="col">
+                    <p >Latest News</p>
+                    <span class="text-grey">Saturday, April 30, 2022</span>
+                </div>
+              
+          </div>
+        
+      </div>
+     
+  </section>
+  <section>
+    <div class="container page2-2 margin-top-minus margin-bottom">
+        <div class="row">
+            <div class=" col pdx">
+                <!-- card -->
+                <div class="card2">
+                    <div class="card-top d-flex jc-c">
+                        <div class="card-title d-flex jc-c ai-c">
+                            <div class="category underline por">
+                                <p>Photography</p>
+                            </div>
+                            <div class="title">
+                                <p>
+                                    Fascinating Labyrinth Illustrations by Lhunatica
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="card-bottom ">
+                        <article class="">
+                            <p>
+                                Loin d’effectuer un travail archéologique (quoique…), Rachel Crisp alias
+                                @bluesunthreads créé des broderies inspirées par la nature. L’artiste, photographe
+                                et guide touristique réalise des œuvres sur lesquelles...
+                            </p>
+                        </article>
+                        <div class="post-share">
+                            <span class="post-time hours">6</span>
+                            <span class="separater">·</span>
+                            <span class="share">0</span>
+                            <div class="corner">
+                                <span class="wrapcorner-top"></span> <span class="wrapcorner-bottom"></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <!-- </div> -->
+    <div class="container page2-3">
+        <div class="row">
+            <div class="col pdx margin-bottom">
+                <div class="card3">
+                    <div class="card-top">
+                        <img src="./FubizMedia/Dothy1-440x285.jpeg" alt="">
+                    </div>
+                    <div class="card-bottom">
+                        <div class="category color-green poa">
+                            <p>GRAPHIC</p>
+                        </div>
+                        <article>
+                            
+                            <div class="title">
+                                <p>
+                                    inspriring vintage collages
+                                </p>
+                            </div>
+                            <p>Lhunatica est une illustratrice vénézuelienne désormais basée...</p>
+                        </article>
+                        <div class="post-share">
+                            <span class="post-time hours">6</span>
+                            <span class="separater">·</span>
+                            <span class="share">0</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col pdx margin-bottom">
+                <div class="card3">
+                    <div class="card-top">
+                        <img src="./FubizMedia/L1-440x285.jpg" alt="">
+                    </div>
+                    <div class="card-bottom">
+                        <div class="category color-green poa">
+                            <p>GRAPHIC</p>
+                        </div>
+                        <article>
+                            
+                            <div class="title">
+                                <p>
+                                    inspriring vintage collages
+                                </p>
+                            </div>
+                            <p>Lhunatica est une illustratrice vénézuelienne désormais basée...</p>
+                        </article>
+                        <div class="post-share">
+                            <span class="post-time hours">6</span>
+                            <span class="separater">·</span>
+                            <span class="share">0</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col pdx margin-bottom">
+                <div class="card3">
+                    <div class="card-top">
+                        <img src="./FubizMedia/unnamed-440x285.jpg" alt="">
+                    </div>
+                    <div class="card-bottom">
+                        <div class="category color-green poa">
+                            <p>GRAPHIC</p>
+                        </div>
+                        <article>
+                            
+                            <div class="title">
+                                <p>
+                                    inspriring vintage collages
+                                </p>
+                            </div>
+                            <p>Lhunatica est une illustratrice vénézuelienne désormais basée...</p>
+                        </article>
+                        <div class="post-share">
+                            <span class="post-time hours">6</span>
+                            <span class="separater">·</span>
+                            <span class="share">0</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- page3 -->
+  <section class="bg-black overflow-hidden">
+    <div class="container page3-1 bg-black">     
+        <div class="row"> 
+            <p >Trending Now in </p>
+            <span class="text-grey d-line por">Paris</span>
+        </div>   
+    </div>
+    <div class="container page3-2 por">
+        <div class="row poa margin-bottom">
+        <div class="col">
+            <div class="card card1">
+                <div class="card-top">
+                    <img src="./FubizMedia/AK1-440x285.jpg" alt="">
+                </div>
+                <div class="card-bottom">
+                    <article class="">
+                        <div class="category ">
+                            <p>PHTOGRAPHY</p>
+                        </div>
+                        <div class="title">
+                            <p>
+                                Immersive Shots By Mireya Gartland
+                            </p>
+                        </div>
+                    </article>
+                    <div class="post-share">
+                        <span class="post-time hours">6</span>
+                        <span class="separater">·</span>
+                        <span class="share">0</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card card1">
+                <div class="card-top">
+                    <img src="./FubizMedia/dein-7-1536x1161-344x222.jpg" alt="">
+                </div>
+                <div class="card-bottom">
+                    <article class="">
+                        <div class="category color-green">
+                            <p>DESIGN</p>
+                        </div>
+                        <div class="title">
+                            <p>
+                                Poetic Ceramic Creations
+                            </p>
+                        </div>
+                    </article>
+                    <div class="post-share">
+                        <span class="post-time hours">6</span>
+                        <span class="separater">·</span>
+                        <span class="share">0</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card card1">
+                <div class="card-top">
+                    <img src="./FubizMedia/Capture-d’écran-2022-04-14-à-01-06-47-344x222.png" alt="">
+                </div>
+                <div class="card-bottom">
+                    <article class="">
+                        <div class="category  color-green">
+                            <p>GRAPHIC</p>
+                        </div>
+                        <div class="title">
+                            <p>
+                                Timelapse Unveils the Sky Vault over the...
+                            </p>
+                        </div>
+                    </article>
+                    <div class="post-share">
+                        <span class="post-time hours">6</span>
+                        <span class="separater">·</span>
+                        <span class="share">0</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card card1">
+                <div class="card-top">
+                    <img src="./FubizMedia/Guirec-Soudée-Hubside-3-344x222.jpg" alt="">
+                </div>
+                <div class="card-bottom">
+                    <article class="">
+                        <div class="category color-green">
+                            <p>GRAPHIC</p>
+                        </div>
+                        <div class="title">
+                            <p>
+                                Impressive Images from the Oscar Winning...
+                            </p>
+                        </div>
+                    </article>
+                    <div class="post-share">
+                        <span class="post-time hours">6</span>
+                        <span class="separater">·</span>
+                        <span class="share">0</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>    
+    </div>
+    <div class="container page3-3 ">
+        <div class="row jc-c">
+            <ul>
+                <li><span class="bullet"></span></li>
+                <li><span class="bullet"></span></li>
+                <li><span class="bullet"></span></li>
+            </ul>    
+        </div>
+    </div>
+  </section>
+  <!-- page4 -->
+  <section class="bg-black">
+    <div class="container page4-1">
+          
+
+        <div class="row">
+            <div class="col"><img src="./FubizMedia/icon-news.png" alt="">
+            </div>
+            <div class="col">
+                <p >More News</p>
+                <span class="text-grey">Saturday, April 30, 2022</span>
+            </div>
+          
+        </div>
+    </div>
+   
+</section>
+<section>
+ 
+    <div class="container page4-2 margin-top-minus margin-bottom">
+        <div class="row">
+            <div class=" col pdx">
+            <!-- card -->
+                <div class="card2">
+                    <div class="card-top d-flex jc-c">
+                        <div class="card-title d-flex jc-c ai-c">
+                            <div class="category underline por">
+                                <p>Photography</p>
+                            </div>
+                            <div class="title">
+                                <p>
+                                    Fascinating Labyrinth Illustrations by Lhunatica
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card-bottom ">
+                        <article class="">
+                        <p>
+                            Loin d’effectuer un travail archéologique (quoique…), Rachel Crisp alias
+                            @bluesunthreads créé des broderies inspirées par la nature. L’artiste, photographe
+                            et guide touristique réalise des œuvres sur lesquelles...
+                        </p>
+                        </article>
+                        <div class="post-share">
+                            <span class="post-time hours">6</span>
+                            <span class="separater">·</span>
+                            <span class="share">0</span>
+                            <div class="corner">
+                                <span class="wrapcorner-top"></span> 
+                                <span class="wrapcorner-bottom"></span>
+                            </div>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col pdx d-flex">
+                <div class=" social d-flex ai-c jc-c">
+                    <a href="#" class="twitter por">
+                      <span class="border-circle poa"></span>
+                    </a>
+                   
+                    <span class="number">434004</span>
+                    <span>Followers</span>
+          
+                </div>
+                <div class=" social d-flex ai-c jc-c">
+                    <a href="#" class="facebook por">
+                        <span class="border-circle poa"></span>
+                    </a>
+                     
+                    <span class="number">0</span>
+                    <span>Likes</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+  <div class="container page4-4">
+      <div class="row">
+          <div class="col pdx margin-bottom">
+              <div class="card3">
+                  <div class="card-top">
+                      <img src="./FubizMedia/Dothy1-440x285.jpeg" alt="">
+                  </div>
+                  <div class="card-bottom">
+                      <div class="category color-green poa">
+                          <p>GRAPHIC</p>
+                      </div>
+                      <article>
+                          
+                          <div class="title">
+                              <p>
+                                  inspriring vintage collages
+                              </p>
+                          </div>
+                          <p>Lhunatica est une illustratrice vénézuelienne désormais basée...</p>
+                      </article>
+                      <div class="post-share">
+                          <span class="post-time hours">6</span>
+                          <span class="separater">·</span>
+                          <span class="share">0</span>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+          <div class="col pdx margin-bottom">
+              <div class="card3">
+                  <div class="card-top">
+                      <img src="./FubizMedia/L1-440x285.jpg" alt="">
+                  </div>
+                  <div class="card-bottom">
+                      <div class="category color-green poa">
+                          <p>GRAPHIC</p>
+                      </div>
+                      <article>
+                          
+                          <div class="title">
+                              <p>
+                                  inspriring vintage collages
+                              </p>
+                          </div>
+                          <p>Lhunatica est une illustratrice vénézuelienne désormais basée...</p>
+                      </article>
+                      <div class="post-share">
+                          <span class="post-time hours">6</span>
+                          <span class="separater">·</span>
+                          <span class="share">0</span>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+          <div class="col pdx margin-bottom">
+              <div class="card3">
+                  <div class="card-top">
+                      <img src="./FubizMedia/unnamed-440x285.jpg" alt="">
+                  </div>
+                  <div class="card-bottom">
+                      <div class="category color-green poa">
+                          <p>GRAPHIC</p>
+                      </div>
+                      <article>
+                          
+                          <div class="title">
+                              <p>
+                                  inspriring vintage collages
+                              </p>
+                          </div>
+                          <p>Lhunatica est une illustratrice vénézuelienne désormais basée...</p>
+                      </article>
+                      <div class="post-share">
+                          <span class="post-time hours">6</span>
+                          <span class="separater">·</span>
+                          <span class="share">0</span>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="container page4-5 ">
+      <div class="row ">
+          <div class="col margin-bottom">
+            <div class="btn"> VIEW MORE NEWS
+                <span>(22169)</span>
+            </div>
+          </div>
+        
+      </div>
+      
+  </div>
+</section>
+<section class="padding-bottom video-bg  " >
+    <div class="container page5-1 ">
+        <div class="row">
+            <div class="video-fubiz">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col video-front ">
+                <button>
+                    <i class="fa-solid fa-angle-left"></i>
+                </button>
+            </div>
+
+            <div class="col d-flex jc-c ai-c f-direction-col">
+              
+                <div class="video-main ">
+                    
+                    <div class="card-title">
+                        <div class="category underline por">
+                            <p>Music</p>
+                        </div>
+                        <div class="title ">
+                            <p>
+                                Lolo Zouai - Give me a kiss
+                            </p>
+                        </div>
+                        <p class="description ">
+                            Lolo Zouaï présente son nouveau signle "Give me a kiss" 
+                        </p>
+
+                    </div>
+                    <div class="play-btn">
+
+                    </div> 
+                </div>
+               
+            </div>
+
+            <div class="col video-next ">
+                <button>
+                    <i class="fa-solid fa-angle-right"></i>
+                </button>
+            </div>
+        </div> 
+        <div class="row jc-c">
+             <div class="col video-more margin-bottom ">
+                    <p>See All Videos <i class="fa-solid fa-plus"></i></p>
+            </div>
+        </div>   
+    </div>
+</section>
+   
+<section>
+ <div class="container page5-2 ">
+        <div class="row overflow-auto jc-c ai-c ">
+            <div class="d-flex  bg-white ">
+                <div class="video-card video-card-focus"></div>
+                <div class="video-card"></div>
+                <div class="video-card"></div>
+                <div class="video-card"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container page5-3">
+        <div class="row jc-c ">
+            <div class="col ">
+                <p class="mustread ">Must Reads</p> 
+            </div>
+        </div>
+        <div class="row border-top por">
+            <div class="col border-l"></div>
+            <div class="col border-m poa"> <p>Technology</p></div>
+            <div class="col border-r"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card card1">
+                    <div class="card-top">
+                        <img src="./FubizMedia/4_40416_1444310903-344x222.jpg" alt="">
+                    </div>
+                    <div class="card-bottom">
+                        <article class="">
+                            <div class="category ">
+                                <p>TECHNOLOGY</p>
+                            </div>
+                            <div class="title">
+                                <p>
+                                    Beautiful Jewels Inspired by the Ocean
+                                </p>
+                            </div>
+                        </article>
+                        <div class="post-share">
+                            <span class="post-time hours">6</span>
+                            <span class="separater">·</span>
+                            <span class="share">0</span>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="card card1">
+                    <div class="card-top">
+                        <img src="./FubizMedia/Art-Moderne-House-Style-344x222.jpg" alt="">
+                    </div>
+                    <div class="card-bottom">
+                        <article class="">
+                            <div class="category ">
+                                <p>TECHNOLOGY</p>
+                            </div>
+                            <div class="title">
+                                <p>
+                                    Beautiful Jewels Inspired by the Ocean
+                                </p>
+                            </div>
+                        </article>
+                        <div class="post-share">
+                            <span class="post-time hours">6</span>
+                            <span class="separater">·</span>
+                            <span class="share">0</span>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex jc-c ai-c ">
+                <div class="card2 ">
+                    <div class="card-top d-flex jc-c">
+                        <div class="card-title d-flex jc-c ai-c">
+                            <div class="category underline por">
+                                <p>Photography</p>
+                            </div>
+                            <div class="title">
+                                <p>
+                                    Fossils Woven on a Bed of Embroidery
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="corner">
+                            <span class="wrapcorner-top"></span> <span class="wrapcorner-bottom"></span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card1">
+                    <div class="card-top">
+                        <img src="./FubizMedia/VB2-344x222.jpeg" alt="">
+                    </div>
+                    <div class="card-bottom">
+                        <article class="">
+                            <div class="category ">
+                                <p>TECHNOLOGY</p>
+                            </div>
+                            <div class="title">
+                                <p>
+                                    Surf Inspired Illustrations & Products by Mersea People
+                                </p>
+                            </div>
+                        </article>
+                        <div class="post-share">
+                            <span class="post-time hours">6</span>
+                            <span class="separater">·</span>
+                            <span class="share">0</span>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="card card1">
+                    <div class="card-top">
+                        <img src="./FubizMedia/whale-2-1536x816-344x222.jpg " alt="">
+                    </div>
+                    <div class="card-bottom">
+                        <article class="">
+                            <div class="category ">
+                                <p>TECHNOLOGY</p>
+                            </div>
+                            <div class="title">
+                                <p>
+                                    Poetic Ceramic Creations
+                                </p>
+                            </div>
+                        </article>
+                        <div class="post-share">
+                            <span class="post-time hours">6</span>
+                            <span class="separater">·</span>
+                            <span class="share">0</span>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row border-bottom por">
+            <div class="col border-l"></div>
+            <div class="col border-m poa"> <p> All Technology articles</p></div>
+            <div class="col border-r"></div>
+        </div>
+    </div>
+</section>
+<section >
+    <div class=" page5-4 box-shadow">
+       
+        <div class="title">
+            <i class="fa-solid fa-pen-fancy"></i>
+            <p>
+                Editor's Picks
+            </p> 
+        </div>
+
+        
+        <div class="photo d-flex ">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col "></div>
+
+        </div>
+    </div>
+</section>
+  <footer>
+      <section>
+           <div class="container page6-1">
+          <div class="row  f-direction-col ai-c">
+                <div class="col d-flex f-direction-col ai-c">
+                <p>Stay Updated <span class="logo-cc"></span>
+                </p>
+                <span class="description">Get the latest creative news from Fubiz about art, design and pop-culture.
+
+                </span>
+                </div>
+                <div class="col">
+                    <form action="">
+                        <input type="text" name="e-mail" placeholder="Your email address">
+                        <button>SIGN UP</button>
+                    </form>
+                </div>
+            
+          </div>
+      </div>
+      </section>
+     
+      <section class="bg-black por">
+           <div class="container page6-2 ">
+                <a href="" class="up-btn poa"> 
+                    <span></span>
+                    <span></span>
+                     <i class="fa-solid fa-angle-up"></i>
+                </a>
+                <div class="row footer-nav "> 
+                    <div class="col d-flex  ">
+                <a href="">ABOUT US </a>
+                <a href="">ADVERTISE </a>
+                <a href="">PRESS </a>
+                    </div>
+           
+                    <div class="col">
+                <div class="logo"></div>
+                    </div>
+           
+                    <div class="col d-flex ">
+                <a href=""> CONTACT </a>
+                <a href=""> ARCHIVES </a>
+                <a href=""> PRIVACY</a>
+                    </div>
+                </div>
+                <div class="row footer-social d-flex jc-c">
+              <div class="col">
+                  <ul class="d-flex ">
+                <li>
+                    <i class="fa-brands fa-instagram"></i>
+                    <a href="" class=""> INSTAGRAM </a>
+                </li>
+                <li>
+                      <i class="fa-brands fa-facebook-f"></i>
+                      <a href="" class=""> FACEBOOK </a>
+                </li>
+                <li>
+                    <i class="fa-brands fa-twitter">
+                    <a href="" class=""></i>TWITTER</a>
+                </li>
+                <li>
+                    <i class="fa-brands fa-google-plus-g"></i>
+                      <a href="" class="">GOOGLE+ </a>
+                </li>
+                <li>
+                    <i class="fa-brands fa-vimeo-v"></i>
+                      <a href="" class="">VIMEO </a>
+                </li>
+                <li>
+                    <i class="fa-brands fa-tumblr"></i>
+                    <a href="" class="">TUMBLR </a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-rss"></i>
+                    <a href="" class="">RSS FEEDS </a>
+                </li>
+                  
+                  </ul>
+              </div>
+              
+                </div>
+                <div class="row ">
+           <div class="col copywrite">
+                <p>Credits - Site by Colorz
+              </p>
+           
+           
+                <p>© 2005 - 2022, Fubiz Media. All rights reserved</p>
+           
+           </div>
+               
+                </div> 
+           </div>  
+      </section>
+      
+  </footer>
+ 
+
+  <script src="https://kit.fontawesome.com/f528f6df02.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+</body>
+</html>
